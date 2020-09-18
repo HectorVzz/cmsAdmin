@@ -1,0 +1,78 @@
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+>
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
+<div class="text-white flex h-full" *ngIf="!loadingBodyData && !loadingNavData else">
+  <form
+    class="px-8 pt-6 pb-8 md:m-auto bg-white rounded w-1/3"
+    [formGroup]="editNavForm"
+    (ngSubmit)="onSubmitNavData()"
+  >
+    <div class="mb-4">
+      <label class="block mb-2 text-sm font-bold text-gray-700" for="username">
+        Titulo
+      </label>
+      <input
+        class="w-full px-6 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+        id="username"
+        type="text"
+        formControlName="title"
+        placeholder="Username"
+      />
+    </div>
+
+    <hr class="mb-6 border-t" />
+    <div class="mb-6 text-center">
+      <button
+        class="w-full px-4 py-2 font-bold text-white bg-primary rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline"
+        type="submit"
+      >
+        Editar titulo de pagina
+      </button>
+    </div>
+  </form>
+  <form
+    class="px-8 pt-6 pb-8 md:m-auto bg-white rounded w-1/3"
+    [formGroup]="editBodyForm"
+    (ngSubmit)="onSubmitBodyData()"
+  >
+    <div class="mb-4">
+      <label class="block mb-2 text-sm font-bold text-gray-700" for="username">
+        Titulo
+      </label>
+      <input
+        class="w-full px-6 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+        id="username"
+        type="text"
+        formControlName="title"
+        placeholder="Titulo de body"
+      />
+    </div>
+    <div class="mb-4">
+      <label class="block mb-2 text-sm font-bold text-gray-700" for="username">
+        Descripcion
+      </label>
+      <input
+        class="w-full px-6 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+        id="username"
+        type="text"
+        formControlName="description"
+        placeholder="Descripcion"
+      />
+    </div>
+
+    <hr class="mb-6 border-t" />
+    <div class="mb-6 text-center">
+      <button
+        class="w-full px-4 py-2 font-bold text-white bg-primary rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline"
+        type="submit"
+      >
+        Editar body de la  pagina
+      </button>
+    </div>
+  </form>
+</div>
