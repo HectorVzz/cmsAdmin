@@ -13,7 +13,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class GeneralSettingsComponent implements OnInit {
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private toastr: ToastrService) { }
 
   apiUrl = environment.apiUrl;
   editNavForm: FormGroup;
@@ -62,7 +62,7 @@ export class GeneralSettingsComponent implements OnInit {
     this.http.post('http://localhost:5000/bodydata',
       { title: this.editBodyForm.get('title').value, description: this.editBodyForm.get('description').value })
       .subscribe(data => {
-
+        this.toastr.success('Body data cambiado con exito');
       });
   }
 
